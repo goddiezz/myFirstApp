@@ -1,20 +1,41 @@
-// pages/find/find.js
+// pages/test/test.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cards:[
-      {},{},{},{},{}
-    ]
+    openid: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //var let const
+    // for(let i=0;i<5;i++){
 
+    // }
+    // console.log(i)
+    // const a=3
+    // a=4
+    // const obj = {}
+    // const arr = []
+    // const str = ''
+    // const name = 'potatorice'
+    // const person = {
+    //   name,
+    //   age : 30,  
+    // }    
+    let _this = this
+    wx.cloud.callFunction({
+      name:'login'
+    }).then((res) => {
+      this.setData({
+        openid : res.result.openid
+      })
+      console.log(JSON.stringify(res.result))
+    })
   },
 
   /**

@@ -1,0 +1,35 @@
+/* components/playlist/playlist.wxss */
+
+.playlist-container{
+  width: 220rpx;
+  position: relative;
+  padding-bottom: 20rpx;
+}
+
+.playlist-img{
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+
+.playlist-playcount{
+  font-size: 24rpx;
+  color:#fff;
+  text-shadow:1px 0 0 rgba(0,0, 0, 0.15) ;
+  position: absolute;
+  right: 10rpx;
+  top:4rpx;
+  padding-left: 26rpx;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEUklEQVR4Xu2aa+hmUxTGf88HH9w+uE0hhRDGpZRLwwcj5FZoMkiiKJEhcgm5X5uS26gpcglDJlOmUCTjAyLlfqlxixAmyT2pR0v76PR6mzln7/N/z1vv2fX/8D9nr/Ws9ey19l57vUfM+NCM+89AwBABM87AkAIzHgDDJjikwJACM87AkAIzHgD9nQK2NwZ2TQuwVtIffSzGxFLA9oHA4ekvHN9+xOGvgbXAamCNpLcmQcicEmB7F+AMYDGwW0uHPgKeAh6W9ElL2cbT54QA23sB5wBnApvVrPkUeBV4D/gB+D692wrYGtgBOBg4oCbzK/AQcL+kdxp71nBi5wTYPiRWDdi5ZsNS4BFJ7zexy/a2wCLgskRKiAVhF0l6rImOpnM6JcD2ycATNfDI56WSXmlqUH2e7YiIIOH82vNLJN2eo2+cTGcE2L4YqBt2uaRY+eIxRvciSauKFUM3x+CYlT9W0rNdGFjpsL038G5N5wJJr5ViFEdACtOXgZ2SMVdJuqXUsHHyCevL9O5j4EhJX5VgdUHAPbUcfVrSCSUGbUh2JNqWSVqyIZn1vS8iwPYRwPMJ4M04wiT9VWJQE1nbdwOV4xEFLzSR63wTtP04cEpSvFjSylxD2sjZ3hGII3XTOHUkndpGvj43OwJSPkYebgJ8ICmKn4kN2w+mQut3YPfcvaCEgDibI/9jXC/puol5D9g+BngmYS6RtCwHv4SA+4CzE+h8SR/mGFAiY/sNYH9glaSoHFuPEgKiulsQdb2kfVojdyBgewUQ+b9O0jY5KksI+CVddFZIOi0HvFTGdlSalyY9++VcobMIsL0F8GMCvkLSbaXO5MjbPg+4N8kulLSmrZ5cAvYAqpw/TlK1GbXFL5pv+yjguT4IOBR4KQGfLunRIk8yhW2fGBtgHwTEhlM1M26SdHUYkQqUqAs+k/Rnpl9jxWo9xJ8lfZHwoumyvOQkykqBBB4EBBFPRh0APABE3y9GNC9ulXRHFyTY3jPhzE/6oqN0Y2qWVFfweZICt9UoISBSIFLhbWAjoDKubsBBkl5vZdHIZNv1dBtVdQ1wQzyUlOVLllCKgCuBm4EoRSPsY0RluHkqUeP/lZKiIZo9bN8JXJgURLh/B1w7onC1pONzQEoIOAx4sQYareyFiZwqOrJXptJr+3+66s/SvLMkRQq2HiUExEpHu3peQu2LgG+AfSWta+19aUvM9l3ABT0TUHQRy46AFOpxL/+8ZwK2k/Rtzur/u3nmCo7J0T5S4D/MXD8GAnKZGyIgMVA7koYU6KEOGPaAivTcVO5iE6yXqpMuhZdLOjfX+a6OwfVdVrq4DJ2UboLj/CzWXxwBqSAava52fR0+Gohfg+KLkxid6e+EgERC9dHT33PUENkSCCJ+S98Q/VQS+pVsZwR0YUwfOgYC+mB9mjCHCJim1ejDliEC+mB9mjCHCJim1ejDliEC+mB9mjCHCJim1ejDln8AzjfmUGCtmwYAAAAASUVORK5CYII=) no-repeat 0 8rpx/22rpx 20rpx ;
+}
+
+.playlist-name{
+font-size: 26rpx;
+line-height: 1.2;
+padding: 4rpx 0 0 12rpx;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+text-overflow: ellipsis;
+}

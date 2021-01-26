@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "po-playlist": "/components/playlist/playlist"
+  },
+  "navigationBarTitleText": "音乐"
 }

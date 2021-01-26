@@ -1,2 +1,14 @@
 <!--pages/music/music.wxml-->
-<navigator url="../index/index" redirect="true" >点击</navigator>
+<swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000" class="swiper">
+  <swiper-item wx:for="{{imgUrls}}">
+    <image src="{{item.url}}" class="image" mode="scaleToFill"></image>
+  </swiper-item>
+</swiper>
+
+<text class="title">推荐歌单</text>
+
+<view class="playlist-container">
+  <block wx:for="{{playlist}}" wx:key="id">
+    <po-playlist playlist="{{item}}"></po-playlist>
+  </block>
+</view>
