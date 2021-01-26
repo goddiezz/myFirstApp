@@ -1,0 +1,2 @@
+<!--pages/music/music.wxml-->
+<navigator url="../index/index" redirect="true" >点击</navigator>
