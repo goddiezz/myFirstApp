@@ -2,7 +2,7 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: '**********'
+  env: 'porice-5gymfr7u94e3079c'
 })
 
 //引入路由
@@ -18,10 +18,15 @@ exports.main = async (event, context) => {
   })
 
   //歌单列表请求，需要传入url，起始记录索引，请求的记录数，按照创建时间降序排列
-  return {
-    event,
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID,
-    unionid: wxContext.UNIONID,
-  }
+  app.router('playlist', async (ctx, next) => {
+    ctx.body = await cloud.database().collection('playlist')
+    .skip(event.start)
+    .limit(event.count)
+    .orderBy('createTime', 'desc')
+    .get()
+    .then((res) => {
+      return res 
+    })
+  })
+  return app.serve()
 }
