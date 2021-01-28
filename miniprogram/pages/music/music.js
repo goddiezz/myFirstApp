@@ -36,50 +36,51 @@ Page({
       url: 'http://p1.music.126.net/9Ayx-EeCnuLRWKTcIhGB6g==/109951165664742856.jpg?imageView&quality=89',
     },
     ],
-    playlist: [{
-      "id": "1001",
-      "playCount": 11111,
-      "name": "Pitchfork评选70年代最佳200首歌曲",
-      "picUrl": "http://p2.music.126.net/CObKLNue7cWdPMfbVsiOzA==/109951165666370374.jpg?param=140y140",
-    },
-    {
-      "id": "1002",
-      "playCount": 213131,
-      "name": "你一定要在自己热爱的世界里闪闪发亮啊",
-      "picUrl": "http://p2.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?param=140y140",
-    },
-    {
-      "id": "1003",
-      "playCount": 4974129,
-      "name": "我试着把孤独藏进耳机",
-      "picUrl": "http://p2.music.126.net/Xvo6PwBcdOA69ipcpV9YYg==/109951165463253777.jpg?param=140y140",
-    },
-    {
-      "id": "1004",
-      "playCount": 3600175,
-      "name": "人生还很长，听首歌偷个懒吧",
-      "picUrl": "https://p1.music.126.net/8Wesf3jEdH92Vv9XyypEJA==/109951165167432609.jpg?param=140y140",
-    },
-    {
-      "id": "1005",
-      "playCount": 881356,
-      "name": "蒸汽波复古 ∫ Wave tick",
-      "picUrl": "https://p2.music.126.net/oEvvra8fQT92yDLwI2sFgA==/109951163719705409.jpg?param=140y140",
-    },
-    {
-      "id": "1006",
-      "playCount": 5362635,
-      "name": "70周年国庆大阅兵演奏曲目合集",
-      "picUrl": "https://p1.music.126.net/dhT8OsDNPFLbTzm8-dP4ew==/109951164398702433.jpg?param=140y140",
-    },
-    ],
+    playlist: [],
+    //   {
+    //   "id": "1001",
+    //   "playCount": 11111,
+    //   "name": "Pitchfork评选70年代最佳200首歌曲",
+    //   "picUrl": "http://p2.music.126.net/CObKLNue7cWdPMfbVsiOzA==/109951165666370374.jpg?param=140y140",
+    // },
+    // {
+    //   "id": "1002",
+    //   "playCount": 213131,
+    //   "name": "你一定要在自己热爱的世界里闪闪发亮啊",
+    //   "picUrl": "http://p2.music.126.net/uesfHcJmZ23S3er_1mpeaw==/109951165621856219.jpg?param=140y140",
+    // },
+    // {
+    //   "id": "1003",
+    //   "playCount": 4974129,
+    //   "name": "我试着把孤独藏进耳机",
+    //   "picUrl": "http://p2.music.126.net/Xvo6PwBcdOA69ipcpV9YYg==/109951165463253777.jpg?param=140y140",
+    // },
+    // {
+    //   "id": "1004",
+    //   "playCount": 3600175,
+    //   "name": "人生还很长，听首歌偷个懒吧",
+    //   "picUrl": "https://p1.music.126.net/8Wesf3jEdH92Vv9XyypEJA==/109951165167432609.jpg?param=140y140",
+    // },
+    // {
+    //   "id": "1005",
+    //   "playCount": 881356,
+    //   "name": "蒸汽波复古 ∫ Wave tick",
+    //   "picUrl": "https://p2.music.126.net/oEvvra8fQT92yDLwI2sFgA==/109951163719705409.jpg?param=140y140",
+    // },
+    // {
+    //   "id": "1006",
+    //   "playCount": 5362635,
+    //   "name": "70周年国庆大阅兵演奏曲目合集",
+    //   "picUrl": "https://p1.music.126.net/dhT8OsDNPFLbTzm8-dP4ew==/109951164398702433.jpg?param=140y140",
+    // },
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getPlaylist()  //一般内部方法前面带下划线
   },
 
   /**
@@ -130,5 +131,19 @@ Page({
   onShareAppMessage: function () {
 
   },
+  _getPlaylist(){
+    wx.showLoading({
+      title: '载入中',
+    })
+    wx.cloud.callFunction({
+      name: 'playlist'
+    }).then((res) => {
+      console.log(res)
+      this.setData({
+        playlist: res.result
+      })
+      wx.hideLoading()
+    })
+  }
   
 })
