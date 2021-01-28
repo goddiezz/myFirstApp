@@ -31,11 +31,11 @@ exports.main = async (event, context) => {
   
   app.router('musiclist', async(ctx, next) => {
     console.log('#######' + event.playlistId)
-    const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.playlsitId)}`)
+    const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.playlistId)}`)
     console,log('#######' + res)
     ctx.body = res.data
   })
 
-  
+
   return app.serve()
 }

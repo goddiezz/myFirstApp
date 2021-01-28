@@ -1,0 +1,13 @@
+<block wx:for="{{musiclist}}" wx:key="id">
+<view class="musiclist-container">
+  <!-- 序号 -->
+  <view class="musiclist-index">{{index+1}}</view>
+  <!-- 歌曲信息容器  -->
+  <view class="musiclist-info">
+    <view class="musiclist-name">
+      {{item.name}}
+    </view>
+    <view class="musiclist-singer">{{item.ar[0].name}} - {{item.al.name}}</view>
+  </view>
+</view>
+</block>

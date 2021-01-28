@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "po-musiclist": "/components/musiclist/musiclist"
+  },
+  "navigationBarTitleText": "歌曲"
 }

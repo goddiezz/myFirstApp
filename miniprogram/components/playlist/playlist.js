@@ -1,4 +1,4 @@
-// components/喷脸aylist/喷脸aylist.js
+// components/playlist/playlist.js
 Component({
   /**
    * 组件的属性列表

@@ -1,2 +1,11 @@
-<!--pages/musiclist/musiclist.wxml-->
-<text>pages/musiclist/musiclist.wxml</text>
+<!--判断是否有封面图，有就作为view背景图-->
+<view wx:if="{{listInfo.coverImgUrl}}" class='detail-container' style='background: url({{listInfo.coverImgUrl}}) no-repeat top/cover'>
+</view>
+<!-- 遮罩层 -->
+<view class='detail-mask'></view>
+<!-- 歌单信息，左图右文 -->
+<view class='detail-info'>
+<image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
+<view class='detail-name'>{{listInfo.name}}</view>
+</view>
+<po-musiclist musiclist="{{musiclist}}" />
