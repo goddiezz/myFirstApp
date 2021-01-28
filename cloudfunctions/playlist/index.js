@@ -14,7 +14,7 @@ const playlistCollection = db.collection('playlist')
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const res = await playListCollection.get()
+  const res = await playlistCollection.get()
   console.log('#######' + res.data)
   return res.data
 }

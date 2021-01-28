@@ -15,7 +15,7 @@ const playlistCollection = db.collection('playlist')
 const axios = require('axios')
 
 //定义接口地址，复制内网穿透后postman测试通过的接口地址
-const URL = 'https://potatorice.cn1.utools.club/top/playlist/highquality?before=1503639064232&limit=20'
+const URL = 'http://potatorice.cn.utools.club/top/playlist/highquality?before=1503639064232&limit=27'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -23,7 +23,7 @@ exports.main = async (event, context) => {
   const {
     data
   } = await axios.get(URL)
-  console.log('######' + JSON.stringify(data))
+  console.log('#######' + JSON.stringify(data))
 
   if(data.code >=1000) {
     console.log(data.msg)
@@ -46,7 +46,7 @@ exports.main = async (event, context) => {
   }
   console.log(newData)
   //一次性批量插入数据
-  if (newData,length > 0) {
+  if (newData.length > 0) {
     //异步调用云数据库的新增操作
     await playlistCollection.add({
       data: [...newData]
