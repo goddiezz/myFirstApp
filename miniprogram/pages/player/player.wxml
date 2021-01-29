@@ -1,2 +1,19 @@
 <!--pages/player/player.wxml-->
-<text>还没写的歌曲页</text>
+<!-- 全屏毛玻璃效果 -->
+<view wx:if="{{picUrl}}" class="player-container" style="background:url({{picUrl}}) center/cover no-repeat"></view>
+<view class="player-mask"></view>
+<view class="player-info">
+  <!-- 封面信息 -->
+  <view class="player-disc">
+    <image class="player-img" src="{{picUrl}}"></image>
+  </view>
+
+
+  <!-- 控制面板 -->
+  <view class="control">
+    <text class="iconfont icon-houtui"></text>
+    <text class="iconfont icon-bofang"></text>
+    <text class="iconfont icon-qianjin"></text>
+
+  </view>
+</view>

@@ -9,8 +9,9 @@ cloud.init({
 const TcbRouter = require('tcb-router')
 //引入axios
 const axios = require('axios')
-//定义基础URL，修改你自己的汆透地址
+//定义基础URL，修改自己的汆透地址
 const BASE_URL = 'https://potatorice.cn.utools.club'
+
 // 云函数入口函数
 exports.main = async (event, context) => {
   const app = new TcbRouter({
@@ -22,20 +23,21 @@ exports.main = async (event, context) => {
     ctx.body = await cloud.database().collection('playlist')
     .skip(event.start)
     .limit(event.count)
-    .orderBy('createTime', 'desc')
+    .orderBy('createTime','desc')
     .get()
     .then((res) => {
-      return res 
+      return res
     })
   })
   
-  app.router('musiclist', async(ctx, next) => {
-    console.log('#######' + event.playlistId)
+  app.router('musiclist', async (ctx, next) => {
+    console.log('######' + event.playlistId)
     const res = await axios.get(`${BASE_URL}/playlist/detail?id=${parseInt(event.playlistId)}`)
-    console,log('#######' + res)
+    console.log('######' + res)
     ctx.body = res.data
   })
 
-
   return app.serve()
-}
+  }
+
+
