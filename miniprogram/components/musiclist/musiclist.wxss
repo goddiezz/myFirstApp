@@ -29,3 +29,8 @@
   font-size: 24rpx;
   color: #888;
 }
+
+.playing view,.playing text{
+  color: red;
+
+}
