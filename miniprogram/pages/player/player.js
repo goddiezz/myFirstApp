@@ -2,7 +2,7 @@
 let musiclist = []
 //播放的歌曲index
 let playingIndex = 0
-
+const backgroundAudioManager = wx.getBackgroundAudioManager()
 Page({
   /**
    * 页面的初始数据
@@ -23,11 +23,7 @@ Page({
     this._loadMusicDetail(options.musicId)
     
   },
-  togglePlaying() {
-    this.setData({
-      isPlaying: !this.data.isPlaying
-    })
-  },
+  
   _loadMusicDetail(musicId){
     let music = musiclist[playingIndex]
     console.log(music)
@@ -50,61 +46,47 @@ Page({
         wx.showToast({
           title: '没有播放权限',
         })
+        backgroundAudioManager.pause()
+        this.setData({
+          isPlaying: false
+        })
         return
       }
+      backgroundAudioManager.src = url
+      backgroundAudioManager.title = music.name
+      backgroundAudioManager.coverImgUrl = music.al.picUrl
+      backgroundAudioManager.singer = music.ar[0].name
       this.setData({
         isPlaying: true
       })
+      wx.hideLoading()
+      backgroundAudioManager.onEnded(this.onNext);
     })
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  togglePlaying() {
+    if(this.data.isPlaying) {
+      backgroundAudioManager.pause()
+    }else{
+      backgroundAudioManager.play()
+    }
+    this.setData({
+      isPlaying: !this.data.isPlaying
+    })
+  },
+  onPrev(){
+    playingIndex--
+    if(playingIndex === -1){
+      playingIndex = musiclist.length - 1
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
+  },
+  onNext(){
+    playingIndex++
+    if(playingIndex === musiclist.length){
+      playingIndex = 0
+    }
+    this._loadMusicDetail(musiclist[playingIndex].id)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

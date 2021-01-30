@@ -95,11 +95,15 @@
   color: #fefefe;
 }
 
-.icon-houtui, .icon-qianjin {
-  font-size: 120rpx;
+.icon-hanhan-01-01, .icon-hanhan-01-011 {
+  font-size: 60rpx;
   margin: 0 50rpx;
+  color: #fefefe;
+
 }
 
-.icon-bofang, .icon-zanting {
-  font-size: 100rpx;
+.icon-bofang1, .icon-zanting1 {
+  font-size: 200rpx;
+  color: #fefefe;
+
 }

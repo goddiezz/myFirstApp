@@ -1,0 +1,6 @@
+<view class="search-box">
+  <view class="search-bar">
+    <input type="text" auto-focus placeholder="热搜"/>
+    <view class="line"></view>
+  </view>
+</view>

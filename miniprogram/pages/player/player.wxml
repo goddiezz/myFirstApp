@@ -11,9 +11,9 @@
 
   <!-- 控制面板 -->
   <view class="control">
-    <text class="iconfont icon-houtui"></text>
-    <text class="iconfont {{isPlaying?'icon-zanting':'icon-bofang'}}" bindtap="togglePlaying"></text>
-    <text class="iconfont icon-qianjin"></text>
+    <text class="iconfont icon-hanhan-01-01" bindtap="onPrev"></text>
+    <text class="iconfont {{isPlaying?'icon-zanting1':'icon-bofang1'}}" bindtap="togglePlaying"></text>
+    <text class="iconfont icon-hanhan-01-011" bindtap="onNext"></text>
 
   </view>
 </view>
