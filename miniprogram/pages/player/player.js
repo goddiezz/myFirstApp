@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    picUrl: ''
+    picUrl: '',
+    isPlaying: false,
+    //判断歌曲是否播放，页面修改写在data
   },
   /**
    * 生命周期函数--监听页面加载
@@ -20,6 +22,11 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
     
+  },
+  togglePlaying() {
+    this.setData({
+      isPlaying: !this.data.isPlaying
+    })
   },
   _loadMusicDetail(musicId){
     let music = musiclist[playingIndex]
@@ -35,10 +42,19 @@ Page({
       data: {
         musicId,
         $url: 'musicUrl',
-        
       }
     }).then((res) => {
       console.log(res)
+      const url = res.result.data[0].url
+      if(url === null) {
+        wx.showToast({
+          title: '没有播放权限',
+        })
+        return
+      }
+      this.setData({
+        isPlaying: true
+      })
     })
 
   },

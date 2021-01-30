@@ -45,6 +45,11 @@ Page({
     //   "name": "Pitchfork评选70年代最佳200首歌曲",
     //   "picUrl": "http://p2.music.126.net/CObKLNue7cWdPMfbVsiOzA==/109951165666370374.jpg?param=140y140",
     // },
+    search: function () {
+      wx.navigateTo({
+        url: '../search/search'
+      })
+    }
   },
 
   /**

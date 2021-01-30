@@ -35,7 +35,7 @@ Component({
       })
     },
     
-    _tranNumber(num,point){
+    _tranNumber(num,point) {
       let numStr = num.toString().split('.')[0]
       if(numStr.length < 6){
         return numStr

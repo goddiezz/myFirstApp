@@ -15,7 +15,7 @@ const BASE_URL = 'https://potatorice.cn.utools.club'
 // 云函数入口函数
 exports.main = async (event, context) => {
   const app = new TcbRouter({
-    event
+    event ,
   })
 
   //歌单列表请求，需要传入url，起始记录索引，请求的记录数，按照创建时间降序排列
@@ -37,6 +37,10 @@ exports.main = async (event, context) => {
     ctx.body = res.data
   })
 
+  app.router('musicUrl', async (ctx, next) => {
+    const res = await axios.get(`${BASE_URL}/song/url?id=${event.musicId}`)
+    ctx.body = res.data
+  })
   return app.serve()
   }
 

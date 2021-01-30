@@ -5,7 +5,8 @@
     "pages/profile/profile",
     "pages/test/test",
     "pages/musiclist/musiclist",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/search/search"
   ],
   "requiredBackgroundModes": [
     "audio"

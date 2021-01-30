@@ -48,7 +48,11 @@
   top: -150rpx;
   transform: rotate(-15deg);
   transform-origin: 24rpx 10rpx;
+  transition: transform 1s ease;
   /* 旋转的度数和原点 */
+}
+.playing.player-disc::after {
+  transform: rotate(0deg);
 }
 
 .player-img {
@@ -60,6 +64,22 @@
   top: 50%;
   margin-top: -184rpx;
   margin-left: -184rpx;
+}
+
+.zhuan {
+  animation: disc 30s linear infinite;
+  /* 属性名：动画名（自定义） 持续时间 效果 是否无限播放 */
+}
+@keyframes disc {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.ting {
+  animation-play-state: paused;
 }
 
 .control {
