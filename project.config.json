@@ -39,7 +39,7 @@
   },
   "appid": "wx71a981549bfa7fbb",
   "projectname": "cloud-po",
-  "libVersion": "2.14.1",
+  "libVersion": "2.14.4",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "plugin": {
@@ -69,6 +69,12 @@
           "name": "search",
           "pathName": "pages/search/search",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "res",
+          "pathName": "pages/searchRes/searchRes",
+          "query": "keywords=海阔天空",
           "scene": null
         }
       ]

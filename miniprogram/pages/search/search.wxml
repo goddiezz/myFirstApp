@@ -1,6 +1,12 @@
-<view class="search-box">
-  <view class="search-bar">
-    <input type="text" auto-focus placeholder="热搜"/>
-    <view class="line"></view>
-  </view>
+<!-- <view class="search-box"> -->
+  <!-- <view class="search-bar"> -->
+    <form bindsubmit="getKeywords">
+    <icon class="search-icon" type="search"></icon>
+    <input class="search-type" name="keywords" type="text" placeholder="热搜"/>
+    <button form-type="submit" bindtap="goToSearchRes">确定</button>
+  </form>
+  <!-- </view> -->
+<!-- </view> -->
+<view>
+  <text>历史记录</text>
 </view>

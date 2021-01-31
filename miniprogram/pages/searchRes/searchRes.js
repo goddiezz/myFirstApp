@@ -1,53 +1,44 @@
-// pages/search/search.js
-// const keywords = ''
-// const key = ''
+// pages/searchRes/searchRes.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    keywords: '',
-    // key:''
+    musiclist: [],
   },
-  
 
   /**
    * 生命周期函数--监听页面加载
    */
-  getKeywords: function(e) {
-    // const keywords = e.detail.value.keywords
-    // console.log(e.detail.value)
-    // this.setData({
-    //   keywords: e.id
-    // })
-    // console.log(e.id)
-    wx.navigateTo({
-      url: `../searchRes/searchRes?keywords=`+e.detail.value.keywords,
-    })
-    // wx.request({
-    //   url: '../searchRes/searchRes',
-    //   method: 'post',
-    //   data: {
-    //     keywords: this.data
-    //   },
-    // })
-    // console.log({key})
-
-
-  },
   onLoad: function (options) {
-    
+    console.log(options)
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'music',
+      data: {
+        keywords: options.keywords,
+        $url: 'searchRes'
+      }
+    }).then((res) => {
+      console.log(res);
+      console.log(res.result);
+      const key = res.result.keywords
+      this.setData({
+        musiclist: key.songs,
+      })
+      console.log(musiclist)
+    })
+    wx.hideLoading()
   },
-  
-  goToSearchRes: function() {
-    // console.log({keywords})
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**

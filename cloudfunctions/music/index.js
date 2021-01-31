@@ -41,6 +41,13 @@ exports.main = async (event, context) => {
     const res = await axios.get(`${BASE_URL}/song/url?id=${event.musicId}`)
     ctx.body = res.data
   })
+
+  app.router('searchRes', async (ctx, next) => {
+    console.log('######' + event.keywords)
+    const res = await axios.get(`${BASE_URL}/cloudsearch?keywords=${event.keywords}`)
+    console.log('######' + res)
+    ctx.body = res.data
+  })
   return app.serve()
   }
 
