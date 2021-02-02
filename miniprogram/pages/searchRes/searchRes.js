@@ -1,4 +1,5 @@
 // pages/searchRes/searchRes.js
+
 Page({
 
   /**
@@ -6,6 +7,8 @@ Page({
    */
   data: {
     musiclist: [],
+    listInfo: {},
+
   },
 
   /**
@@ -23,15 +26,25 @@ Page({
         $url: 'searchRes'
       }
     }).then((res) => {
-      console.log(res);
-      console.log(res.result);
-      const key = res.result.keywords
+      console.log(res)
+      console.log(res.result)
+      console.log(res.result.result)
+      const key = res.result.result
+      console.log(key)
       this.setData({
         musiclist: key.songs,
+        listInfo: {
+          coverImgUrl: key.songs.coverImgUrl,
+          name: key.songs.name,
+        }
       })
       console.log(musiclist)
     })
+    this._setSearchRes()
     wx.hideLoading()
+  },
+  _setSearchRes() {
+    wx.setStorageSync('musiclist', this.data.musiclist)
   },
 
   /**

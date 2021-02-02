@@ -40,7 +40,7 @@ Page({
         $url: 'musicUrl',
       }
     }).then((res) => {
-      console.log(res)
+      // console.log(res)
       const url = res.result.data[0].url
       if(url === null) {
         wx.showToast({
