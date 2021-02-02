@@ -10,13 +10,17 @@ Page({
   data: {
     picUrl: '',
     isPlaying: false,
+    name: '',
+    singer: '',
+    isLyricShow: false,
+    lyric: '歌词'
     //判断歌曲是否播放，页面修改写在data
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    // console.log(options)
     console.log(options.musicId, typeof (options.musicId))
     playingIndex = options.index
     musiclist = wx.getStorageSync('musiclist')
@@ -60,7 +64,27 @@ Page({
         isPlaying: true
       })
       wx.hideLoading()
+      //播放结束自动下一首
       backgroundAudioManager.onEnded(this.onNext);
+      //太烦人了
+      backgroundAudioManager.pause()
+      wx.cloud.callFunction({
+        name: 'music',
+        data: {
+          musicId,
+          $url: 'lyric',
+        }
+      }).then((res) => {
+        console.log(res)
+        let lyric = '暂无歌词'
+        const lrc =res.result.lrc
+        if(lrc) {
+          lyric = lrc.lyric
+        }
+        this.setData({
+          lyric
+        })
+      })
     })
 
   },
@@ -72,6 +96,11 @@ Page({
     }
     this.setData({
       isPlaying: !this.data.isPlaying
+    })
+  },
+  onLyricShow() {
+    this.setData({
+      isLyricShow: !this.data.isLyricShow
     })
   },
   onPrev(){
