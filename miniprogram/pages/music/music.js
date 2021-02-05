@@ -52,7 +52,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getPlaylist()  //一般内部方法前面带下划线
+    wx.cloud.callFunction({
+      name: 'music',
+      data : {
+        playlistId: options.playlistId,
+        $url: 'imgUrl'
+      }
+    }).then((res) => {
+      // console.log(res)
+      console.log(res.result)
+      const banners = res.result.banners
+      this.setData({
+        imgUrls: banners,
+      })
+      this._setBanners()
+    })  //一般内部方法前面带下划线
+    this._getPlaylist()
   },
 
   /**
@@ -105,6 +120,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  _setBanners(){
+    wx.setStorageSync('imgUrls', this.data.banners)
   },
   _getPlaylist(){
     wx.showLoading({

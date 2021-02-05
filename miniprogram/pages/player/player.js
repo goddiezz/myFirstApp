@@ -52,7 +52,7 @@ Page({
         })
         backgroundAudioManager.pause()
         this.setData({
-          isPlaying: false
+          isPlaying: false,
         })
         return
       }

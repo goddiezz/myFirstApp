@@ -30,4 +30,29 @@
 .icon-hanhan-01-011:before {
   content: "\e6bc";
 }
+/* 性别和右 */
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1612435826673'); /* IE9 */
+  src: url('iconfont.eot?t=1612435826673#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP8AAsAAAAACFwAAAOtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqERINSATYCJAMMCwgABCAFhG0HNxsZB8iemjxpIpA81m0SfCsIwQKLh7cx9P27KwAqQFnP8Qiyqml8VXmADtT8JiwJxxYV6+kuv/bbd6yaLKLfEm5J89neO9HdDmkempVIShAahMaQXgZf8T4FjI3QJnCqR1veEPLd37pcfyNEVZYJpnSbWPxx7/RP8LL52pbTWMvG2BQGGHfeBTbGwgUUaIEE5A1jN1EexGkCtQYtKC3qnV1CjwJMCsRRoDahJ2VVakpDtVBZsrI0xmOoQnW6g2yAPOLfj3+kgpikIgMzlw73Hdj6yfWUgib9J9mjCCQbzw1tHRlTQCEOSr1bKmF8SkWto63W51YqQhor9P8Pl7r6ypX+8RJRCWjrRXJMk05KhoUEP1Mkos75B6h0G8lX+CyR7ZEiTqhBBm30A4PqELVKQF3zeNQmozE5TvCxQ4g9wjwm1rCxgR2NzKgVRq8wjx+d8piUtXFeaxe0boHCaNWsNyRhs51+9DL3I7GaKb53dHRwIFLVx3AODsU7KbYv8o7L3+P9Y/ZauIZudZC2dfnX5/TA8FkvGcW9bihOu8QTNpPCeRRF4B19oiKZvnzmYrE8Ce9vOcFPKjH6BtllFRX0sr+mD/dBGmoyiXdKm4oJS6mZpRetz+gQyDPgufWitLJUoC5vGm1pMGtuj2v8GG0qBswUiOv5wAw3GEIpmakK7V2UtiTIqIcubYmS8BsR7bV/uweqSjaTLhV7BqPW7GfO+iJ0xhyaJturkf5AysNpl9nktYB5cDSGbK7TE0s+hYsIwDMQsJy3qkuPDl0tbQxtsrNf8FxAm0EVlD60/WHNRQl419/X2OW43s+2pZRlANz8XI5igPQcqfjDv/HyivLfvUnlfzVZAV80P6O4/+YXqL2++v59wf/sVoQARVcAWy62Vm1DIHth4GhCLbTxF8uh1V9/fUfrYkK1jhiSKgOQVRtCCzkFFepMQ6VqM1Br0uH6Om1YRZQaTHgVIDT7gqTRW8iafaOF/IUKnf6hUnOgUGsjwI51RiKQVDuKTCEHve4x0E5ihRzSF5Seky5Ck5MKTrsmzr0QSopJZFOHFBOPMSf6RndjRKEfJxHqCedRGCYYwYlPtjQDRNIVcXG/shc1vZMI+ixgxCSIA1nuIY8tEVO0vejLff4c0QohE9c0dUSvEZbzekcdTe0W6KE2btV0Lf1zN7QuIZQ8TmGJCDoQ3SSE8QRKy4f5iE00uT2iqRUtqZVqq23Or4+ebwfUAgfmSJGjqDr2jO+8WFcSwwsAAAAA') format('woff2'),
+  url('iconfont.woff?t=1612435826673') format('woff'),
+  url('iconfont.ttf?t=1612435826673') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1612435826673#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nanxing:before {
+  content: "\e622";
+}
+
+.icon-you:before {
+  content: "\e682";
+}
 

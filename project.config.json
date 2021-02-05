@@ -18,7 +18,7 @@
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
     "useApiHostProcess": true,
@@ -75,6 +75,12 @@
           "name": "res",
           "pathName": "pages/searchRes/searchRes",
           "query": "keywords=海阔天空",
+          "scene": null
+        },
+        {
+          "name": "mine",
+          "pathName": "pages/profile/profile",
+          "query": "",
           "scene": null
         }
       ]

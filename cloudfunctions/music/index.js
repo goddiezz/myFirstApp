@@ -47,6 +47,11 @@ exports.main = async (event, context) => {
     ctx.body = res.data
   })
 
+  app.router('imgUrl',async(ctx, next) => {
+    const res = await axios.get(`${BASE_URL}/banner`)
+    ctx.body = res.data
+  })
+
   app.router('searchRes', async (ctx, next) => {
     console.log('######' + event.keywords)
     const res = await axios.get(`${BASE_URL}/cloudsearch?keywords=${event.keywords}`)
