@@ -41,12 +41,8 @@ Page({
     playlist: [],
     search: [],
   },
-  search: function () {
-    wx.navigateTo({
-      url: '../search/search',
-    })
-
-  },
+  
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -124,6 +120,7 @@ Page({
   _setBanners(){
     wx.setStorageSync('imgUrls', this.data.banners)
   },
+
   _getPlaylist(){
     wx.showLoading({
       title: '载入中',

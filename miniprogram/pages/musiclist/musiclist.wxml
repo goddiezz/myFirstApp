@@ -1,15 +1,61 @@
-<!--miniprogram/pages/musiclist/musiclist.wxml-->
-<!-- 判断是否有封面图，有就作为顶部view区域的背景图-->
-<view wx:if="{{listInfo.coverImgUrl}}" class="detail-container"
-  style='background: url({{listInfo.coverImgUrl}}) no-repeat top/cover'>
+<!-- 默认导航 -->
+<view class="header" style="padding-top:{{statusBarHeight + 44}}px;opacity:{{1-opacity}}">
+  <text class="iconfont icon-zuo" bind:tap="back"></text>
+  <!-- 返回 -->
+  <text class="title">{{title}}</text>
 </view>
-<!-- 遮罩层 -->
-<view class='detail-mask'></view>
-<!-- 歌单信息，左图右文 -->
-<view class='detail-info'>
-  <image src="{{listInfo.coverImgUrl}}" class="detail-img"></image>
-  <view class='detail-name'>{{listInfo.name}}</view>
+<!-- 切换导航 -->
+<view class="header" style="padding-top:{{statusBarHeight + 44}}px;opacity:{{opacity}}">
+  <view wx:if="{{listInfo.coverImgUrl}}" class='blur-bg' style='background: url({{listInfo.coverImgUrl}}) no-repeat center/cover;z-index:11'></view>
+  <view class='mask' style="z-index:10"></view>
+  <text class="iconfont icon-zuo" bind:tap="back"></text>
+  <!-- 返回 -->
+  <text class="title ellipsis">{{title}}</text>
+</view>
+<!-- 歌单信息最外层容器，包含顶部导航栏高度，歌单信息，以及白色信息条 -->
+<view class="info-contanier" style="padding-top:{{statusBarHeight + 44}}px;">
+  <view wx:if="{{listInfo.coverImgUrl}}" class='blur-bg' style='background: url({{listInfo.coverImgUrl}}) no-repeat center/cover;z-index:101'></view>
+  <view class='mask' style="z-index:100"></view>
+  <view class='detail-info' style="z-index:102">
+    <view class="left">
+      <image src="{{listInfo.coverImgUrl}}" class="detail-img"></image>
+    </view>
+    <view class="right">
+      <view class='datail-name ellipsis'>{{listInfo.name}}</view>
+      <view class="user-info">
+        <image src="{{listInfo.avatarUrl}}"></image>
+        <text class="info">{{listInfo.nickname}}</text>
+      </view>
+      <view class="description ellipsis">
+        <text wx:if="{{listInfo.description!=null}}">{{listInfo.description}}</text>
+      </view>
+    </view>
+    <!-- 收藏评论分享 -->
+    <view class="control">
+      <view>
+        <text class="iconfont icon-xinzeng"></text>
+        <!-- 新增 -->
+        <text>{{listInfo.subscribedCount}}</text>
+      </view>
+      <view>
+        <text class="iconfont icon-58pinglun"></text>
+        <!-- 评论 -->
+        <text>{{listInfo.commentCount}}</text>
+      </view>
+      <view class="last">
+        <text class="iconfont icon-fenxiang"></text>
+        <!-- 分享 -->
+        <text>{{listInfo.shareCount}}</text>
+      </view>
+    </view>
+  </view>
 </view>
 
 <!-- 使用歌曲列表组件-->
-<po-musiclist musiclist="{{musiclist}}" />
+<scroll-view class="content">
+  <po-musiclist musiclist="{{musiclist}}" />
+  <po-musiclist musiclist="{{musiclist}}" />
+</scroll-view>
+
+<view class="bottom">
+</view>

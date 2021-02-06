@@ -1,0 +1,14 @@
+<!-- 自定义顶部栏 -->
+<view class="nav-bar" style="padding-top:{{navBarHeight+menuHeight/4}}rpx;">
+  <text class="iconfont icon-zuo" style="padding-bottom:{{menuHeight/2}}px"></text>
+  <text class="text"></text>
+  <!-- <text class="iconfont icon-r"></text> -->
+  <slot name="content"></slot>
+</view>
+
+<!-- 
+    内容区域：
+    自定义顶部栏用的fixed定位，会遮盖到下面内容，注意设置好间距
+-->
+<view class="content" style="margin-top:{{navBarHeight}}px;">
+</view>

@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "我的"
-  
+  "usingComponents": {
+    "po-navigateBar": "/components/navigateBar/navigateBar"
+  },
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom"
+
 }

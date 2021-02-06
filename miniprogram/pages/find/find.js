@@ -1,27 +1,53 @@
-// pages/find/find.js
+// pages/search/search.js
+// const keywords = ''
+// const key = ''
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cards:[
-      {},{},{},{},{}
-    ]
+    keywords: '',
+    // key:''
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  getKeywords: function(e) {
+    // const keywords = e.detail.value.keywords
+    // console.log(e.detail.value)
+    // this.setData({
+    //   keywords: e.id
+    // })
+    // console.log(e.id)
+    wx.navigateTo({
+      url: `../searchRes/searchRes?keywords=`+e.detail.value.keywords,
+    })
+    // wx.request({
+    //   url: '../searchRes/searchRes',
+    //   method: 'post',
+    //   data: {
+    //     keywords: this.data
+    //   },
+    // })
+    // console.log({key})
+
 
   },
-
+  onLoad: function (options) {
+    
+  },
+  
+  goToSearchRes: function() {
+    // console.log({keywords})
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

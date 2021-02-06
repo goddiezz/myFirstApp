@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "po-playlist": "/components/playlist/playlist"
+    "po-playlist": "/components/playlist/playlist",
+    "po-navigateBar": "/components/navigateBar/navigateBar"
   },
-  "navigationBarTitleText": "音乐",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom"
 }

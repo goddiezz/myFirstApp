@@ -1,0 +1,34 @@
+@import"../../iconfont.wxss";
+.nav-bar{ 
+  position: fixed; 
+  display: flex;
+  width: 100%; 
+  top: 0;
+  z-index: 9999;
+  background: #000;
+  
+}
+
+.iconfont {
+  color: #fefefe;
+  margin: 0 5% 0 5%;
+}
+
+.icon-zuojiantou {
+  position: relative;
+  left: 30rpx;
+  font-size: 60rpx;
+}
+
+.text{
+  position: relative;
+  color: #fefefe;
+  font-size: 40rpx;
+  left: 60rpx;
+}
+
+.icon-r {
+  position: relative;
+  left: 65rpx;
+  font-size: 20rpx;
+}

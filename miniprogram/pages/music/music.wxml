@@ -1,10 +1,15 @@
-<!--pages/music/music.wxml-->
-<!-- <view class='searchBottom' bindtap='search'>
+  <po-navigateBar>
+    <view slot="content">
+      <view class='searchButton' bindtap='search' >
       <view class="search-border">
         <icon class="search-icon" size='16' type='search'></icon>
         <input class="search-text" disabled placeholder="搜索"/>
       </view>
-</view> -->
+</view>
+    </view>
+  </po-navigateBar>
+
+
 
 <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="3000" duration="1000" class="swiper">
   <block wx:for="{{imgUrls}}" wx:key="index">
