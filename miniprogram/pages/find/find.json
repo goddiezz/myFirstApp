@@ -1,4 +1,9 @@
+
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "发现"
+  "usingComponents": {
+    "po-navigatebar":"/components/navigateBar/navigateBar",
+    "po-search":"/components/search/search",
+    "po-login":"/components/login/login"
+  },
+  "navigationStyle": "custom"
 }

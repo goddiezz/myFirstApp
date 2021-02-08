@@ -6,8 +6,9 @@
     "pages/test/test",
     "pages/musiclist/musiclist",
     "pages/player/player",
-    "pages/search/search",
-    "pages/searchRes/searchRes"
+    "pages/searchRes/searchRes",
+    "pages/publish/publish"
+
   ],
   "requiredBackgroundModes": [
     "audio"
@@ -15,7 +16,7 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "网抑云",
     "navigationBarTextStyle": "white"
   },

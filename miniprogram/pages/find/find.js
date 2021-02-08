@@ -1,53 +1,74 @@
-// pages/search/search.js
-// const keywords = ''
-// const key = ''
+let keyword = ''
 Page({
-
+  data: {
+    //控制底部弹出层是否显示
+    modalShow: false
+  },
+  onSearch(event) {
+    keyword = event.detail.keyword
+    console.log(keyword)
+    wx.navigateTo({
+      url: `../searchRes/searchRes?keywords=${{keyword}}`,
+    })
+  },
+  onLoad(options) {},
+  onPublish() {
+    
+    //获取用户的当前设置，返回值中只会出现小程序已经向用户请求过的权限，
+    //根据是否具有scope,userInfo属性，判断用户是否授权
+    wx.getSetting({
+      success: (res) => {
+        console.log('当前设置' + JSON.stringify(res))
+        if(res.authSetting['scope.userInfo']){
+          wx.getUserInfo({
+            success:(res) => {
+              console.log(res)
+              this.onLoginSuccess({
+                detail: res.userInfo
+              })
+            }
+          })
+  } else {
+    this.setData({
+      modalShow: true,
+    })
+  }
+}
+})
+},
+    onLoginSuccess(event) {
+      console.log('>>>>>' + event)
+      const detail = event.detail
+      console.log(detail)
+      wx.navigateTo({
+        url: `../publish/publish?nickName=${detail.nickName}&avatarUrl=${detail.avatarUrl}`,
+      })
+    },
+    onLoginFail() {
+      wx.showModal({
+        title: '授权用户才能发布',
+        content: ''
+      })
+    },
   /**
    * 页面的初始数据
    */
   data: {
-    keywords: '',
-    // key:''
+    
   },
-  
 
   /**
    * 生命周期函数--监听页面加载
    */
-  getKeywords: function(e) {
-    // const keywords = e.detail.value.keywords
-    // console.log(e.detail.value)
-    // this.setData({
-    //   keywords: e.id
-    // })
-    // console.log(e.id)
-    wx.navigateTo({
-      url: `../searchRes/searchRes?keywords=`+e.detail.value.keywords,
-    })
-    // wx.request({
-    //   url: '../searchRes/searchRes',
-    //   method: 'post',
-    //   data: {
-    //     keywords: this.data
-    //   },
-    // })
-    // console.log({key})
-
+  onLoad: function () {
 
   },
-  onLoad: function (options) {
-    
-  },
-  
-  goToSearchRes: function() {
-    // console.log({keywords})
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**

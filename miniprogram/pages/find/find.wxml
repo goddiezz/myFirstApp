@@ -1,13 +1,18 @@
-<!-- <view class="search-box"> -->
-  <!-- <view class="search-bar"> -->
-    <form bindsubmit="getKeywords">
-        <icon class="search-icon" type="search"></icon>
-        <input class="search-type" name="keywords" type="text" placeholder="热搜"/>
-        <button form-type="submit" bindtap="goToSearchRes">确定</button>
-      </form>
-      <!-- </view> -->
-    <!-- </view> -->
-    <view>
-      <text>历史记录</text>
+<!--pages/find/find.wxml-->
+<po-navigatebar>
+
+</po-navigatebar>
+<!-- 顶部搜索区 -->
+<view class="header">
+    <view class="left" bind:tap="onPublish">
+        <i class="iconfont icon-xie"></i>
     </view>
-    
+    <view class="right">
+        <po-search bind:search="onSearch"/>
+    </view>
+</view>
+
+<scroll-view class="container" scroll-y>
+<!-- 底部弹出层 -->
+<po-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></po-login>
+</scroll-view>

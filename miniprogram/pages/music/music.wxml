@@ -1,12 +1,12 @@
   <po-navigateBar>
-    <view slot="content">
+    <!-- <view slot="content">
       <view class='searchButton' bindtap='search' >
       <view class="search-border">
         <icon class="search-icon" size='16' type='search'></icon>
         <input class="search-text" disabled placeholder="搜索"/>
       </view>
 </view>
-    </view>
+    </view> -->
   </po-navigateBar>
 
 

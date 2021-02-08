@@ -27,7 +27,7 @@
   justify-content: center;
 }
 .search-text {
-  padding-left: 8%;
+  padding-left: 16%;
   width: 25%;
   line-height: 150%;
   text-align: center;

@@ -85,6 +85,18 @@
           "pathName": "pages/profile/profile",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "find",
+          "pathName": "pages/find/find",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pulish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
         }
       ]
     }

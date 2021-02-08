@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "po-navigateBar": "/components/navigateBar/navigateBar"
+  },
+  "navigationStyle": "custom"
+}

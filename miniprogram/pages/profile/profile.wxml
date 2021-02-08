@@ -1,5 +1,5 @@
 <po-navigateBar></po-navigateBar>
-<view class="background-color"></view>
+<!-- <view class="background-color"></view> -->
 <view class="container">
 <view class="top-view">
   <view class="head-box">
