@@ -37,9 +37,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 380rpx;
   filter: blur(40rpx);
-  opacity: 0.4;
+  opacity: 0.8;
 }
 /* 2-遮罩层 */
 .mask {
@@ -47,7 +47,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 380rpx;
   background-attachment: #333;
 }
 /* 3-最上层的内容，一定要相对定位不脱离文档流 */

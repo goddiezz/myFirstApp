@@ -2,6 +2,7 @@
 let musiclist = []
 //播放的歌曲index
 let playingIndex = 0
+const app = getApp()
 const backgroundAudioManager = wx.getBackgroundAudioManager()
 Page({
   /**
@@ -26,6 +27,33 @@ Page({
     musiclist = wx.getStorageSync('musiclist')
     this._loadMusicDetail(options.musicId)
     
+  },
+  savePlayHistory() {
+    //z正在播放的歌曲
+    const music = musiclist[playingIndex]
+    console.log(music)
+    const openid = app.globalData.openid
+    //根据用户openid取出本地存储
+    const history = wx.getStorageSync(openid)
+    //本地是否已经保存了歌曲
+    let bHave = false
+    for (let i = 0, len = history.length; i < len; i++) {
+      //已经存在，结束循环
+      if(history[i].id == music.id) {
+        bHave = true
+        break
+      }
+    }
+    //遍历完毕，不存在
+    if(!bHave) {
+      //将当前歌曲加入历史记录头部
+      history.unshift(music)
+      //更新本地存储（异步—）
+      wx.setStorage({
+        data: history,
+        key: openid,
+      })
+    }
   },
   
   _loadMusicDetail(musicId){
@@ -60,6 +88,8 @@ Page({
       backgroundAudioManager.title = music.name
       backgroundAudioManager.coverImgUrl = music.al.picUrl
       backgroundAudioManager.singer = music.ar[0].name
+      //保存播放记录
+      this.savePlayHistory()
       this.setData({
         isPlaying: true
       })

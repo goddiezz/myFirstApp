@@ -1,17 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-     // 胶囊按钮位置信息
-    const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
-    // console.log(menuButtonInfo)
-    // 获取系统信息
-    const systemInfo = wx.getSystemInfoSync();
-    // console.log(systemInfo)
-    // 导航栏高度 = 状态栏到胶囊的间距（胶囊距上距离-状态栏高度） * 2 + 胶囊高度 + 状态栏高度
-    this.globalData.navBarHeight = (menuButtonInfo.top - systemInfo.statusBarHeight) * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
-    this.globalData.menuRight = systemInfo.screenWidth - menuButtonInfo.right;
-    this.globalData.menuButton = menuButtonInfo.top - systemInfo.statusBarHeight;
-    this.globalData.menuHeight = menuButtonInfo.height;
     
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -24,8 +13,34 @@ App({
         traceUser: true,
       })
     }
+    this.getOpenid()
+    this.globalData = {
+      openid: -1,
+    }
+     // 胶囊按钮位置信息
+     const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
+     // console.log(menuButtonInfo)
+     // 获取系统信息
+     const systemInfo = wx.getSystemInfoSync();
+     // console.log(systemInfo)
+     // 导航栏高度 = 状态栏到胶囊的间距（胶囊距上距离-状态栏高度） * 2 + 胶囊高度 + 状态栏高度
+     this.globalData.navBarHeight = (menuButtonInfo.top - systemInfo.statusBarHeight) * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
+     this.globalData.menuRight = systemInfo.screenWidth - menuButtonInfo.right;
+     this.globalData.menuButton = menuButtonInfo.top - systemInfo.statusBarHeight;
+     this.globalData.menuHeight = menuButtonInfo.height;
+     
   },
-  
+  getOpenid() {
+    wx.cloud.callFunction({
+      name: 'login'
+    }).then((res) => {
+      const openid = res.result.openid
+      this.globalData.openid = openid
+      if(wx.getStorageSync(openid) == '') {
+        wx.setStorageSync(openid, [])
+      }
+    })
+  },
   // 数据都是根据当前机型进行计算，这样的方式兼容大部分机器
   globalData: {
     navBarHeight: 0, // 导航栏高度

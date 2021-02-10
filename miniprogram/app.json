@@ -8,7 +8,9 @@
     "pages/player/player",
     "pages/publish/publish",
     "pages/blog-detail/blog-detail",
-    "pages/play-history/play-history"
+    "pages/play-history/play-history",
+    "pages/profile-blog/profile-blog"
+
   ],
   "requiredBackgroundModes": [
     "audio"
