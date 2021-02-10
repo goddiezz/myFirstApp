@@ -1,7 +1,4 @@
-<!--pages/find/find.wxml-->
-<po-navigatebar>
-
-</po-navigatebar>
+<navigation showIcon='{{false}}' title="发现"></navigation>
 <!-- 顶部搜索区 -->
 <view class="header">
     <view class="left" bind:tap="onPublish">
@@ -12,7 +9,17 @@
     </view>
 </view>
 
-<scroll-view class="container" scroll-y>
+<!-- 博客卡片列表 -->
+<scroll-view class="container">
+    <block wx:for="{{blogList}}" wx:key="_id">
+        <view class="blog-panel">
+            <po-blog-card blog="{{item}}" data-blogid="{{item._id}} " bind:tap="goComment"></po-blog-card>
+            <po-blog-ctrl blog="{{item}}" blogId="{{item._id}}"></po-blog-ctrl>
+        </view>
+    </block>
+</scroll-view>
+
+<!-- <scroll-view class="container1" scroll-y> -->
 <!-- 底部弹出层 -->
 <po-login modalShow="{{modalShow}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></po-login>
-</scroll-view>
+<!-- </scroll-view> -->

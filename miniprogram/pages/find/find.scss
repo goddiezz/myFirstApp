@@ -1,0 +1,39 @@
+@import "../../global.scss";
+
+.header{
+  display: flex;
+  flex-grow: inherit;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: solid 1rpx;
+  background: #FFB6C1;
+}
+
+.left{
+  height: 50rpx;
+  width: 100rpx;
+  padding-left: 30rpx;
+}
+
+.iconfont{
+  font-size: 60rpx;
+}
+
+.right{
+  padding-right: 30rpx;
+}
+
+.container1 {
+  margin-top: 10rpx;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.container {
+  // padding-top: 90rpx;
+  // padding: $gap ;
+  background: #cebcbf;
+
+}
+.blog-panel {
+  margin-bottom: $gap;
+}

@@ -14,9 +14,9 @@
     "audio"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#FFB6C1",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#FFB6C1",
     "navigationBarTitleText": "网抑云",
     "navigationBarTextStyle": "white"
   },

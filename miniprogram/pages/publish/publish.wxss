@@ -97,7 +97,7 @@
 }
 
 .footer .send-btn {
-  background: rgb(255, 194, 194);
+  background-color: #A081AB;
   color: #fff;
   font-size: 28rpx;
 }

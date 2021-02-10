@@ -1,53 +1,67 @@
 /* pages/music/music.wxss */
-.swiper{
+.swiper {
   height: 340rpx;
 }
-.image{
+
+.image {
   width: 98%;
   height: 100%;
   border-radius: 20rpx;
   margin: 0 1% 1% 1%;
 }
-.title{
+
+.title {
   margin-top: 10rpx;
   margin-left: 10rpx;
 }
+
 .playlist-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 10rpx;
 }
 
-.search-Button {
+.search-Bottom {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  width: 70%;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
+
 .search-text {
-  padding-left: 16%;
-  width: 25%;
+  padding-left: 42.5%;
+  width: 15%;
   line-height: 150%;
   text-align: center;
-  right: 75%;
-
 }
+
 .search-icon {
   margin: 6rpx 10rpx 10rpx 10rpx;
   position: absolute;
-  margin-left:54%;
+  margin-left: 54%;
   z-index: 2;
   width: 15px;
   height: 15px;
   text-align: center;
-  right: 80%;
 }
+
 .search-border {
-  width: 100%;
+  width: 80%;
   border: solid 1rpx #2a2a2a;
-  border-radius: 30px;  
-  /* margin: auto auto 20rpx auto; */
-  background: rgb(233, 233, 233);
+  border-radius: 30px;
+  margin: 4rpx auto 4rpx auto;
+  background: #e9e9e9;
 }

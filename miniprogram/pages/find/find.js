@@ -2,16 +2,20 @@ let keyword = ''
 Page({
   data: {
     //控制底部弹出层是否显示
-    modalShow: false
+    modalShow: false,
+    blogList: [],
   },
   onSearch(event) {
-    keyword = event.detail.keyword
-    console.log(keyword)
-    wx.navigateTo({
-      url: `../searchRes/searchRes?keywords=${{keyword}}`,
+    console.log(event.detail.keyword)
+    this.setData({
+      blogList: []
     })
+    keyword = event.detail.keyword
+    this._loadBlogList(0)
   },
-  onLoad(options) {},
+  onLoad(options) {
+    this._loadBlogList()
+  },
   onPublish() {
     
     //获取用户的当前设置，返回值中只会出现小程序已经向用户请求过的权限，
@@ -50,19 +54,36 @@ Page({
         content: ''
       })
     },
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    
-  },
+    _loadBlogList(start = 0) {
+      wx.showLoading({
+        title: '数据加载中',
+      })
+      wx.cloud.callFunction({
+        name: 'blog',
+        data: {
+          keyword,
+          start,
+          count: 10,
+          $url: 'list',
+        }
+      }).then((res) => {
+        console.log(res)
+        this.setData({
+          blogList: this.data.blogList.concat(res.result)
+        })
+        wx.hideLoading()
+        wx.stopPullDownRefresh()
+      })
+    },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function () {
+    onPullDownRefresh: function () {
+      this.setData({
+        blogList: []
+      })
+      this._loadBlogList(0)
+    },
 
-  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -94,10 +115,10 @@ Page({
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  //  */
+  // onPullDownRefresh: function () {
 
-  },
+  // },
 
   /**
    * 页面上拉触底事件的处理函数

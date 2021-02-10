@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "po-login": "/components/login/login",
+    "po-bottom-modal": "/components/bottom-modal/bottom-modal"
+  }
+}

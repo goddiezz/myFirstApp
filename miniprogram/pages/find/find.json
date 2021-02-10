@@ -1,9 +1,13 @@
 
 {
   "usingComponents": {
-    "po-navigatebar":"/components/navigateBar/navigateBar",
-    "po-search":"/components/search/search",
-    "po-login":"/components/login/login"
+    "po-navigatebar": "/components/navigateBar/navigateBar",
+    "po-search": "/components/search/search",
+    "po-login": "/components/login/login",
+    "po-blog-card": "/components/blog-card/blog-card",
+    "po-blog-ctrl": "/components/blog-ctrl/blog-ctrl"
   },
-  "navigationStyle": "custom"
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "发现 "
+
 }
