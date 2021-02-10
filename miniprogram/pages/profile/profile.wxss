@@ -1,159 +1,84 @@
+page {
+  background-color: #EDEDED;
+}
 
-.container {
+.profile-header {
+  background-image: url("https://potato-rice.oss-cn-hangzhou.aliyuncs.com/img/bgd.jpg");
+  background-size: cover;
+  height: 480rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  background: #FFB6C1;
-  height: 320rpx;
-  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
 }
-.iconfont {
-  color: #fff;
-}
-.top-view {
-  /* background-color: #e9e9e9; */
-  border-top: 1rpx #202020 solid;
-  height: 240rpx;
-  width: 100%;
-  position: relative;
-}
-.head-box {
-  position: absolute;
-  border-radius: 50%;  
-  background-color: #fff;
-  height: 135rpx;
-  width: 135rpx;
-  top: 15%;
-  left: 5%;
-  justify-content: center; 
-  display: flex; 
-  align-items: center;
-}
-.head {
-  height: 50%;
-  width: 50%;
-}
-.name {
-  position: absolute;
-  font-size: 40rpx;
-  left: 25%;
-  top: 19%;
-  color: #fff;
-}
-.icon-nanxing {
-  position: absolute;
-  font-size: 30rpx;
-  left: 95rpx;
-  top: 11%;
-  padding-left: 15rpx;
-  border-left: 3rpx solid #b1b1b1;
-  color: #d8d6d6;
-}
-.signature {
-  font-size: 30rpx;
-  color: #d8d6d6;
-}
-.change-mask {
-  opacity: 0.3;
-  background-color: #fff;
-  position: absolute;
-  height: 66rpx;
-  width: 140rpx;
-  left: 75%;
-  top: 30%;
-  border-radius: 40rpx 40rpx;
-}
-.change-button {
-  position: absolute;
-  height: 66rpx;
-  width: 135rpx;
-  left: 75%;
-  top: 30%;
-  border-radius: 40rpx 40rpx;
-}
-.change {
-  font-size: 30rpx;
-  color: #fff;
-  margin-left: 10rpx;  
-}
-.pencil {
-  width: 30rpx;
-  height: 30rpx;
-  margin-left: 20rpx;
-  margin-top: 18rpx;
-}
-.middle-view {
-  background-color: #fff;
-  position: relative;
-  width: 100%;
-  height: 180rpx;
-  margin: 0 4% 0 4%;
-  border-radius: 15rpx;
-}
-.follow-question {
-  width: 33.3%;
-  position: absolute;
-  height: 100%;
-}
-.follow-person {
-  width: 33.3%;
-  left: 33.3%;
-  position: absolute;
-  height: 100%;
 
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+  overflow: hidden;
+  border: 6rpx solid #ccc;
+  border-radius: 50%;
+  margin-top: 20rpx;
 }
-.follower {
-  width: 33.3%;
-  left: 66.7%;
-  position: absolute;
-  height: 100%;
+
+.nickname {
+  font-size: 32rpx;
+  margin-top: 20rpx;
 }
-.border-line {
-  height: 66%;
-  width: 100%;
-  border: solid 3rpx #b1b1b1;
-  border-top:none;
-  border-bottom:none;
-  position: absolute;
-  top: 17%;
+
+.nav {
+  overflow: hidden;
+  margin: 20rpx;
 }
-.number {
-  font-size: 55rpx;
-  justify-content: center;
+
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  margin-top: 25rpx;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 30rpx;
+  min-height: 100rpx;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
 }
-.middle-text {
-  justify-content: center;
+
+.content {
+  font-size: 32rpx;
+  line-height: 1.6em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  color: #707070;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.bottom-view {
-  background-color: #fff;
-  top: 5%;
-  position: relative;
-  width: 100%;
-  margin: 4% 4% 0 4%;
-  border-radius: 15rpx;
-  height: auto;
+
+.text {
+  color: #4B4B4B;
 }
-.strip {
-  width: 100%;
-  height: 90rpx;
-  display: flex;
-  align-items: center;
-}
-.text-bottom {
-  font-size: 35rpx;
-  margin-left: 30rpx;
-}
-.icon-you {
-  text-align: right;
-  position: absolute;
-  left: 92%;
-  color: #adadad;
-}
-.text-bind {
-  position: absolute;
-  left: 78%;
-  color: #adadad;
+
+.iconfont .iconyou {
+  font-size: 32rpx;
+  color: #4B4B4B;
 }

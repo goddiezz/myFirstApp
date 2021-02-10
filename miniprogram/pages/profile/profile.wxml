@@ -1,58 +1,28 @@
-<po-navigateBar></po-navigateBar>
-<!-- <view class="background-color"></view> -->
-<view class="container">
-<view class="top-view">
-  <view class="head-box">
-  <image class="head" src="/images/profile/head.png"></image>
+<view class="profile-header">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
   </view>
-  <text class="name">匿名
-    <text class="iconfont icon-nanxing"></text>
-    <text class="signature">什么也没留下哦～</text>
-  </text><view class="change-mask"></view>
-  <view class="change-button">
-    <image src="/images/profile/pencil.png" class="pencil"></image>
-    <text class="change">编辑</text>
-  </view>
-  </view>
-<view class="middle-view">
-  <view class="follow-question">
-    <text class="number">0</text>
-    <text class="middle-text">我关注的问题</text>
-  </view>
-  <view class="follow-person">
-    <view class="border-line"></view>
-    <text class="number">0</text>
-    <text class="middle-text">我关注的人</text>
-  </view>
-  <view class="follower">
-    <text class="number">0</text>
-    <text class="middle-text">关注我的人</text>
-  </view>
+  <open-data type="userNickName" class="nickName"></open-data>
 </view>
-<view class="bottom-view">
-  <view class="strip">
-    <text class="text-bottom">我的消息</text>
-    <text class="iconfont icon-you"></text>
 
+<view class="nav">
+  <view class="nav-item">
+    <!-- navigator可以方便实现页面跳转，这里把hover-class置为none，去掉点击变灰的效果，自己可以尝试下（类似网页a标签的处理） -->
+    <navigator class="content" hover-class="none" url="/pages/play-history/play-history">
+      <text class="text">最近播放</text>
+      <i class="iconfont icon-you"></i>
+    </navigator>
   </view>
-  <view class="strip">
-    <text class="text-bottom">我的提问</text>
-    <text class="iconfont icon-you"></text>
+  <view class="nav-item">
+    <navigator class="content" hover-class="none" url="/pages/profile-blog/profile-blog">
+      <text class="text">我的博客</text>
+      <i class="iconfont icon-you"></i>
+    </navigator>
   </view>
-  <view class="strip">
-    <text class="text-bottom">我的回答</text>
-    <text class="iconfont icon-you"></text>
+  <view class="nav-item">
+    <view class="content" bind:tap="onTapQrCode">
+      <text class="text">小程序码</text>
+      <i class="iconfont icon-you"></i>
+    </view>
   </view>
-</view>
-<view class="bottom-view">
-  <view class="strip">
-    <text class="text-bottom">绑定手机号码</text>
-    <text class="text-bind">请绑定</text>
-    <text class="iconfont icon-you"></text>
-  </view>
-  <view class="strip">
-    <text class="text-bottom">实名认证</text>
-    <text class="iconfont icon-you"></text>
-  </view>
-</view>
 </view>

@@ -1,8 +1,7 @@
 {
   "usingComponents": {
-    "po-navigateBar": "/components/navigateBar/navigateBar"
   },
-  "navigationBarTitleText": "我的",
+  "disableScroll": true,
   "navigationStyle": "custom"
 
 }
