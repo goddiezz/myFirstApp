@@ -17,6 +17,6 @@ module.exports = (date) => {
 
     }
   }
-  console.log(fmt)
+  // console.log(fmt)
   return fmt
 }

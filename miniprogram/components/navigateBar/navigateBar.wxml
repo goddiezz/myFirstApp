@@ -1,10 +1,10 @@
 <!-- 自定义顶部栏 -->
 <view class="nav-bar" style="padding-top:{{navBarHeight}}rpx;">
-  <text class="iconfont icon-zu" style="padding-bottom:{{menuHeight +9}}px"></text>
+  <text style="padding-bottom:{{menuHeight +9}}px"></text>
   <!-- <text class="text"></text> -->
   <!-- <text class="iconfont icon-r"></text> -->
   <slot name="content"></slot>
 </view>
 
-<view class="content" style="margin-top:{{navBarHeight}}px;">
+<view class="content" style="margin-top:{{navBarHeight+3}}px;">
 </view>

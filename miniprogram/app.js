@@ -3,10 +3,10 @@ App({
   onLaunch: function () {
      // 胶囊按钮位置信息
     const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
-    console.log(menuButtonInfo)
+    // console.log(menuButtonInfo)
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
-    console.log(systemInfo)
+    // console.log(systemInfo)
     // 导航栏高度 = 状态栏到胶囊的间距（胶囊距上距离-状态栏高度） * 2 + 胶囊高度 + 状态栏高度
     this.globalData.navBarHeight = (menuButtonInfo.top - systemInfo.statusBarHeight) * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
     this.globalData.menuRight = systemInfo.screenWidth - menuButtonInfo.right;
@@ -35,8 +35,8 @@ App({
 },
 
   onShow(options) {
-    console.log('onShow 执行')
-    console.log(options)
+    // console.log('onShow 执行')
+    // console.log(options)
   
   }
 })

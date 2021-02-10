@@ -81,7 +81,7 @@ Component({
         return
       }
       wx.showLoading({
-        title: '评论ing',
+        title: '评论🀄️',
         mask: true,
       })
       //
@@ -103,6 +103,7 @@ Component({
           modalShow: false,
           content: '',
         })
+        this.triggerEvent('refreshCommentList')
       })
     },
 

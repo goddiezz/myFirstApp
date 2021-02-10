@@ -13,7 +13,7 @@
 <scroll-view class="container">
     <block wx:for="{{blogList}}" wx:key="_id">
         <view class="blog-panel">
-            <po-blog-card blog="{{item}}" data-blogid="{{item._id}} " bind:tap="goComment"></po-blog-card>
+            <po-blog-card blog="{{item}}" data-blogid="{{item._id}}" bind:tap="goDetail"></po-blog-card>
             <po-blog-ctrl blog="{{item}}" blogId="{{item._id}}"></po-blog-ctrl>
         </view>
     </block>

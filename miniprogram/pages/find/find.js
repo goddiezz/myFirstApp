@@ -5,6 +5,13 @@ Page({
     modalShow: false,
     blogList: [],
   },
+  goDetail(event) {
+    console.log(event.target.dataset.blogid)
+    wx.navigateTo({
+      url: '../../pages/blog-detail/blog-detail?blogId='+event.target.dataset.blogid,
+    })
+
+  },
   onSearch(event) {
     console.log(event.detail.keyword)
     this.setData({

@@ -1,2 +1,0 @@
-<!--pages/searchRes/searchRes.wxml-->
-<search-res musiclist="{{musiclist}}" />

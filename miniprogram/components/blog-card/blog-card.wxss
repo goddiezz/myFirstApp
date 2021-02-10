@@ -7,7 +7,7 @@ page {
 .blog {
   width: 95%;
   padding: 20rpx;
-  background: #fff0f2;
+  background: #faf8f8;
 }
 
 .blog-header {

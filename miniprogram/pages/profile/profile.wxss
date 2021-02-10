@@ -2,7 +2,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  background: rgb(255, 175, 175);
+  background: #FFB6C1;
   height: 320rpx;
   width: 100%;
 }

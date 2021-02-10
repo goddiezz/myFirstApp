@@ -97,6 +97,12 @@
           "pathName": "pages/publish/publish",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "detail",
+          "pathName": "pages/blog-detail/blog-detail",
+          "query": "blogId=79550af2602386fe03dcdce31415691a",
+          "scene": null
         }
       ]
     }
